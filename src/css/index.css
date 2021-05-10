@@ -1,0 +1,142 @@
+#app .container {
+  max-width: 1200px;
+  padding: 0;
+}
+
+#app .container a {
+  text-decoration: none;
+}
+
+#app #header {
+  height: 105px;
+}
+
+#app #header .container {
+  height: 100%;
+  padding: 6px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #header .container .header-left {
+  width: 300px;
+  height: 100%;
+  margin: 4px 10px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #header .container .header-left a {
+  font-size: 36px;
+  color: #FE2E54;
+  margin-bottom: 0;
+}
+
+#app #header .container .header-center {
+  height: 100%;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#app #header .container .header-center .header-search {
+  border: 2px solid #FE2E54;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+#app #header .container .header-center .header-search input {
+  width: 470px;
+  height: 36px;
+  padding: 0 40px 0 15px;
+  border: none;
+  outline: none;
+}
+
+#app #header .container .header-center .header-search button {
+  width: 100px;
+  height: 37px;
+  border: none;
+  background-color: #FE2E54;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 7px 23px;
+  letter-spacing: 6px;
+}
+
+#app #header .container .header-center .header-search button:hover {
+  background-color: #E41E43;
+}
+
+#app #header .container .header-center .hot-search a {
+  margin-right: 20px;
+  font-size: 12px;
+  color: #929292;
+}
+
+#app #header .container .header-center .hot-search a:hover {
+  text-decoration: underline;
+}
+
+#app #header .container .header-center .hot-search .hot-list {
+  color: #ff0000;
+}
+
+#app #header .container .header-right {
+  cursor: pointer;
+  width: 220px;
+  height: 60px;
+  margin-left: 50px;
+  background-image: url(https://cmsstatic.ffquan.cn//images/home/headgrup.png?v=202104231430);
+  background-size: 100% 100%;
+}
+
+#app #nav {
+  background-color: #FE2E54;
+}
+
+#app #nav .container {
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #nav .container a {
+  padding: 0 30px;
+  color: #ffffff;
+  line-height: 35px;
+  font-size: 14px;
+}
+
+#app #nav .container a:hover {
+  background-color: #E41E43;
+}
+
+#app #nav .container .nav-hot {
+  background-color: #E41E43;
+}
+
+#app #main {
+  background-color: rgba(201, 201, 201, 0.3);
+}
+
+#app #main .container {
+  background-color: rgba(201, 201, 201, 0.3);
+}
+
+#app #main .container .banner .banner-left {
+  width: 220px;
+  height: 410px;
+  background-color: #fff;
+  padding: 10px;
+}

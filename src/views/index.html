@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,54 +9,327 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/swiper-bundle.min.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../lib/swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <div id='app'>
-         <div id='header'>
-             <div class='container'>
-                  <div class='header-left'>
-                      <a href="">优品购</a>
-                  </div>
-                  <div class='header-center'>
-                      <div class='header-search'>
-                          <input type="text" placeholder="好宝贝 等你搜">
-                          <button>搜索</button>
-                      </div>
-                      <div class='hot-search'>
-                          <a href="">口罩</a>
-                          <a href="">螺狮粉</a>
-                          <a href="">抽纸</a>
-                          <a href="">洗脸巾</a>
-                          <a href="" class='hot-list'>数据线</a>
-                          <a href="">洗发水</a>
-                          <a href="" class='hot-list'>驱蚊贴</a>
-                          <a href="">短袖</a>
-                          <a href="">牙膏</a>
-                      </div>
-                  </div>
-                  <div class='header-right'>
-                      
-                  </div>
-             </div>
-         </div>
-         <div id='nav'>
-           <div class='container'>
-               <a href="" class='nav-hot'>首页</a>
-               <a href="">好货精选</a>
-               <a href="">疯抢榜</a>
-               <a href="">9块9包邮</a>
-               <a href="">咚咚抢</a>
-           </div>
-         </div>
-         <div id='main'>
-             <div class='container'>
-                 <div class='banner'>
-                     <div class='banner-left'>
-                          
+        <div id='header'>
+            <div class='container'>
+                <div class='header-left'>
+                    <a href="">优品购</a>
+                </div>
+                <div class='header-center'>
+                    <div class='header-search'>
+                        <input type="text" placeholder="好宝贝 等你搜">
+                        <button>搜索</button>
+                    </div>
+                    <div class='hot-search'>
+                        <a href="">口罩</a>
+                        <a href="">螺狮粉</a>
+                        <a href="">抽纸</a>
+                        <a href="">洗脸巾</a>
+                        <a href="" class='hot-list'>数据线</a>
+                        <a href="">洗发水</a>
+                        <a href="" class='hot-list'>驱蚊贴</a>
+                        <a href="">短袖</a>
+                        <a href="">牙膏</a>
+                    </div>
+                </div>
+                <div class='header-right'>
+
+                </div>
+            </div>
+        </div>
+        <div id='nav'>
+            <div class='container'>
+                <a href="" class='nav-hot'>首页</a>
+                <a href="">好货精选</a>
+                <a href="">疯抢榜</a>
+                <a href="">9块9包邮</a>
+                <a href="">咚咚抢</a>
+            </div>
+        </div>
+        <div id='main'>
+            <div class='container'>
+                <!-- 轮播图区域 -->
+                <div class='banner'>
+                    <div class='banner-left'>
+                        <dl class='banner-left-list'>
+                            <h5><img src="https://img.alicdn.com/imgextra/i2/2053469401/O1CN01VG4gop2JJhu9yo5dR-2053469401.png"
+                                    alt="">服饰鞋包</h5>
+                            <dd>
+                                <a href="" class='hot-list'>女装</a>
+                                <a href="">男装</a>
+                                <a href="" class='hot-list'>内衣</a>
+                                <a href="" class='hot-list'>连衣裙</a>
+                                <a href="">服饰</a>
+                                <a href="">鞋品</a>
+                                <a href="">箱包</a>
+                                <a href="" class='hot-list'>T恤</a>
+                            </dd>
+                        </dl>
+                        <dl class='banner-left-list'>
+                            <h5><img src="https://img.alicdn.com/imgextra/i2/2053469401/O1CN01HDhZXR2JJhuAOUVjh-2053469401.png"
+                                    alt="">美食</h5>
+                            <dd>
+                                <a href="">休闲零食</a>
+                                <a href="" class='hot-list'>元气早餐</a>
+                                <a href="" class='hot-list'>坚果</a>
+                                <a href="">糖果巧克力</a>
+                                <a href="" class='hot-list'>方便速食</a>
+                            </dd>
+                        </dl>
+                        <dl class='banner-left-list'>
+                            <h5><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01xbEVSm2JJhuBVC5Pb-2053469401.png"
+                                    alt="">美妆</h5>
+                            <dd>
+                                <a href="" class='hot-list'>唇妆</a>
+                                <a href="" class='hot-list'>面膜</a>
+                                <a href="">底妆</a>
+                                <a href="">基础护肤</a>
+                                <a href="" class='hot-list'>夏日防晒</a>
+                                <a href="">眼妆</a>
+                                <a href="">洗面奶</a>
+                            </dd>
+                        </dl>
+                        <dl class='banner-left-list'>
+                            <h5><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01kv7JlR2JJhu3ZtUVN-2053469401.png"
+                                    alt="">居家生活</h5>
+                            <dd>
+                                <a href="" class='hot-list'>母婴</a>
+                                <a href="">日用品</a>
+                                <a href="">厨房用品</a>
+                                <a href="" class='hot-list'>纸巾</a>
+                                <a href="">家装家纺</a>
+                                <a href="">户外运动</a>
+                            </dd>
+                        </dl>
+                        <dl class='banner-left-list'>
+                            <h5><img src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01nM4UX22JJhuB6Qun3-2053469401.png"
+                                    alt="">数码办公</h5>
+                            <dd>
+                                <a href="" class='hot-list'>数码家电</a>
+                                <a href="">文娱车品</a>
+                                <a href="">耳机</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class='banner-center'>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01amRNrh2JJi5ekowGp_!!2053469401.png"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01abdZXo2JJi5XjqG3Z_!!2053469401.jpg"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN01QOfaHo2JJi59zbXoA_!!2053469401.jpg"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN019Js8CC2JJi5JI1cTD_!!2053469401.jpg"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01IZH0Wn2JJi555xah5_!!2053469401.jpg"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01LYvcK72JJi5HbawJq_!!2053469401.jpg"
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img
+                                            src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01KsCH4p2JJi3DI8DqL_!!2053469401.jpg"
+                                            alt=""></div>
+
+                                </div>
+                                <!-- 如果需要分页器 -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- 如果需要导航按钮 -->
+                                <div class="swiper-button-prev swiper-button-white"></div>
+                                <div class="swiper-button-next swiper-button-white"></div>
+                            </div>
+                            <div class='banner-center-down'>
+                                 <a href=""><img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN018g8oxg2JJhyGrGdHZ_!!2053469401.jpg" alt=""></a>
+                                 <a href=""><img src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01BOsNue2JJi0VP3HY6_!!2053469401.jpg" alt=""></a>
+                                 <a href=""><img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01v8lJmI2JJi5KGp9TW_!!2053469401.jpg" alt=""></a>
+                            </div>
+                    </div>
+                    <div class='banner-right'>
+                        <div>
+                            <a href=""><img src="https://img.alicdn.com/imgextra/i4/2053469401/O1CN01UhDaF22JJi1bPRH4Q_!!2053469401.jpg" alt=""></a>
+                        </div>
+                        <div class='banner-right-list'>
+                            <h5><i></i><span>优惠头条</span></h5>
+                            <div class="swiper-content">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <dl>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">汤成倍健天然维生素e维e软胶囊</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件半价</i>
+                                                <a href="">【气味图书馆】小红莓身体乳</a>
+                                            </dd>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">blackrose混血美瞳日抛10片</a>
+                                            </dd>
+                                         </dl>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <dl>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">玉泽净颜调护舒缓喷雾150ml</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件半价</i>
+                                                <a href="">汤臣倍健男士多种维生素钙片</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件0元</i>
+                                                <a href="">张三黑芝麻糕点120g/包</a>
+                                            </dd>
+                                         </dl>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <dl>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">汤臣倍健左旋肉碱茶多酚片</a>
+                                            </dd>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">【佰草集】水凝悦泽鲜注面膜</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件0元</i>
+                                                <a href="">【立减20元】钙尔奇孕妇钙片60粒</a>
+                                            </dd>
+                                         </dl>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <dl>
+                                            <dd>
+                                                <i>买一送一</i>
+                                                <a href="">爱护洗发沐浴露二合一</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件半价</i>
+                                                <a href="">自然乐园芦荟胶</a>
+                                            </dd>
+                                            <dd>
+                                                <i>第二件0元</i>
+                                                <a href="">爱心妈妈巴拉成长裤超薄透气</a>
+                                            </dd>
+                                         </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href=""><img src="https://img.alicdn.com/imgextra/i1/2053469401/O1CN01BFuijF2JJi5MRf4dC_!!2053469401.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 小编说 -->
+                <div class='prompt'>
+                      <b>小编说<img src="https://cmsstatic.ffquan.cn//images/home/lb.png?v=202104231430" alt=""></b>
+                      <span>亲爱的，欢迎每天来选购超值优惠商品哦~每天都会准时更新</span>
+                </div>
+
+                <!-- ad广告区 -->
+                <div class='ad'>
+                     <div class='ad-left'>
+                          <div class='ad-left-top'>
+                                 <div class='ad-left-title'>
+                                     <div>
+                                         <i class='ad-title-icon'></i>
+                                         <h5>咚咚抢</h5>
+                                         <span class='ad-title-time'>
+                                           <span>距本场结束</span>
+                                           <i class='title-time-hours'>10</i>:
+                                           <i class='title-time-minutes'>12</i>:
+                                           <i class='title-time-seconds'>15</i>
+                                         </span>
+                                     </div>
+                                     <div>
+                                         <span>换一换</span>
+                                         <span>查看更多</span>
+                                     </div>
+                                 </div>
+                                 <div class='left-top-item'>
+                                     <div class='top-item-left'>
+                                         <img src="https://img.alicdn.com/imgextra/i3/2768335812/O1CN010KNxNz1snwc1G8AAz_!!2768335812.jpg_310x310.jpg" alt="">
+                                     </div>
+                                       <div class='top-item-right'>
+                                          <p class='item-right-title'>黄老五黑芝麻酥糖376g</p>
+                                          <p class='item-right-icon'>
+                                              <span class='half-price'>第二件半价</span>
+                                          </p>
+                                          <p class='item-right-price'>
+                                              <span>￥33.9</span>
+                                              <b>￥36.9</b>
+                                          </p>
+                                       </div>
+                                 </div>
+                                 <div class='left-top-item'>
+                                    <div class='top-item-left'>
+                                        <img src="https://img.alicdn.com/i1/1120178555/O1CN01dFhNgV2D4EuX5WOBQ_!!1120178555.jpg_310x310.jpg" alt="">
+                                    </div>
+                                      <div class='top-item-right'>
+                                         <p class='item-right-title'>黄老五花生米酥380g</p>
+                                         <p class='item-right-icon'>
+                                             <span class='half-price'>第二件半价</span>
+                                             <span class='rob-buy'>品牌抢购</span>
+                                         </p>
+                                         <p class='item-right-price'>
+                                             <span>￥26.8</span>
+                                             <b>￥29.0</b>
+                                         </p>
+                                      </div>
+                                </div>
+                                <div class='left-top-item'>
+                                    <div class='top-item-left'>
+                                        <img src="https://img.alicdn.com/imgextra/i3/677726521/O1CN01hfZPHn1y2fQ0fb27e_!!677726521.jpg_310x310.jpg" alt="">
+                                    </div>
+                                      <div class='top-item-right'>
+                                         <p class='item-right-title'>润本婴儿驱蚊贴</p>
+                                         <p class='item-right-icon'>
+                                             <span class='half-price'>第二件半价</span>
+                                             <span class='hot-buy'>本场爆款</span>
+                                         </p>
+                                         <p class='item-right-price'>
+                                             <span>￥12.9</span>
+                                             <b>￥17.9</b>
+                                         </p>
+                                      </div>
+                                </div>
+                                <div class='left-top-item'>
+                                    <div class='top-item-left'>
+                                        <img src="https://img.alicdn.com/imgextra/i2/2201146955988/O1CN018VYuWB1u6YHW4HZsx_!!2201146955988.jpg_310x310.jpg" alt="">
+                                    </div>
+                                      <div class='top-item-right'>
+                                         <p class='item-right-title'>本叮叮环保无味驱蚊液</p>
+                                         <p class='item-right-icon'>
+                                             <span class='half-price'>第二件半价</span>
+                                         </p>
+                                         <p class='item-right-price'>
+                                             <span>￥38</span>
+                                             <b>￥58</b>
+                                         </p>
+                                      </div>
+                                </div>
+                          </div>
                      </div>
-                 </div>
-             </div>
-         </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="../js/index.js"></script>
 </body>
+
 </html>

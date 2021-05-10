@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #app .container {
   max-width: 1200px;
   padding: 0;
@@ -38,7 +39,7 @@
 
 #app #header .container .header-center {
   height: 100%;
-  margin: 0 10px;
+  margin: 0 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,16 +128,420 @@
 }
 
 #app #main {
-  background-color: rgba(201, 201, 201, 0.3);
+  background-image: url(https://img.alicdn.com/imgextra/i3/2053469401/O1CN01OBKQiY2JJhuIZSKKR-2053469401.png);
 }
 
-#app #main .container {
-  background-color: rgba(201, 201, 201, 0.3);
+#app #main .container .banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #app #main .container .banner .banner-left {
   width: 220px;
-  height: 410px;
+  height: 420px;
   background-color: #fff;
   padding: 10px;
+}
+
+#app #main .container .banner .banner-left .banner-left-list {
+  margin-bottom: 5px;
+}
+
+#app #main .container .banner .banner-left .banner-left-list h5 {
+  font-size: 15px;
+  color: #555555;
+}
+
+#app #main .container .banner .banner-left .banner-left-list h5 img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+#app #main .container .banner .banner-left .banner-left-list dd {
+  padding: 0 0 10px 13px;
+  margin-bottom: 0;
+}
+
+#app #main .container .banner .banner-left .banner-left-list dd a {
+  font-size: 14px;
+  color: #888888;
+  margin-right: 8px;
+}
+
+#app #main .container .banner .banner-left .banner-left-list dd a:hover {
+  text-decoration: underline;
+}
+
+#app #main .container .banner .banner-left .banner-left-list dd .hot-list {
+  color: #FE2E54;
+}
+
+#app #main .container .banner .banner-left dl:nth-of-type(4) dd {
+  padding: 0 10px 10px 13px;
+}
+
+#app #main .container .banner .banner-center {
+  vertical-align: top;
+  width: 670px;
+  height: 100%;
+}
+
+#app #main .container .banner .banner-center .swiper-container {
+  width: 100%;
+  height: 310px;
+  --swiper-navigation-size: 24px;
+  /* 设置按钮大小 */
+}
+
+#app #main .container .banner .banner-center .swiper-container img {
+  width: 100%;
+  height: 100%;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-pagination {
+  padding-right: 20px;
+  text-align: right;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-button-white {
+  width: 27px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-button-prev {
+  left: 0px;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-button-next {
+  right: 0px;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-button-hide {
+  opacity: 1;
+}
+
+#app #main .container .banner .banner-center .swiper-container .swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+#app #main .container .banner .banner-center .banner-center-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 110px;
+}
+
+#app #main .container .banner .banner-center .banner-center-down a {
+  width: 33.33%;
+  height: 100%;
+}
+
+#app #main .container .banner .banner-center .banner-center-down a img {
+  width: 100%;
+  height: 100%;
+}
+
+#app #main .container .banner .banner-right {
+  width: 310px;
+  height: 420px;
+}
+
+#app #main .container .banner .banner-right > div:nth-of-type(1) {
+  width: 100%;
+  height: 155px;
+}
+
+#app #main .container .banner .banner-right > div:nth-of-type(1) img {
+  width: 100%;
+  height: 100%;
+}
+
+#app #main .container .banner .banner-right .banner-right-list {
+  width: 100%;
+  height: 155px;
+  padding: 10px 0 10px 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+#app #main .container .banner .banner-right .banner-right-list h5 {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #main .container .banner .banner-right .banner-right-list h5 i {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: #FE2E54;
+  margin-right: 8px;
+}
+
+#app #main .container .banner .banner-right .banner-right-list h5 span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #555555;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content {
+  width: 300px;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content dl {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  overflow: hidden;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd i {
+  display: inline-block;
+  font-style: normal;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 7px;
+  font-size: 12px;
+  background-color: #ff8a3b;
+  padding: 0 5px;
+  color: #fff;
+  margin-right: 6px;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd a {
+  font-size: 14px;
+  color: #555555;
+}
+
+#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd a:hover {
+  color: #FE2E54;
+}
+
+#app #main .container .banner .banner-right div:nth-last-of-type(1) {
+  width: 100%;
+  height: 110px;
+}
+
+#app #main .container .banner .banner-right div:nth-last-of-type(1) img {
+  width: 100%;
+  height: 100%;
+}
+
+#app #main .container .prompt {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  padding: 0 5px;
+  line-height: 40px;
+  background-color: #fff8f8;
+}
+
+#app #main .container .prompt b {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff8484;
+}
+
+#app #main .container .prompt b img {
+  width: 14px;
+  height: 12px;
+  margin: 0 12px 0 5px;
+}
+
+#app #main .container .prompt span {
+  color: #ff8484;
+  font-size: 14px;
+}
+
+#app #main .container .ad {
+  width: 100%;
+  height: 860px;
+  margin-top: 20px;
+}
+
+#app #main .container .ad .ad-left {
+  width: 880px;
+  height: 100%;
+}
+
+#app #main .container .ad .ad-left .ad-left-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+#app #main .container .ad .ad-left .ad-left-title .ad-title-icon {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: #FE2E54;
+  margin-right: 10px;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #555555;
+  margin: 0;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div span {
+  font-size: 14px;
+  color: #777777;
+  margin: 0 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div span:hover {
+  color: #ff0100;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div .ad-title-time {
+  width: 185px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div .ad-title-time > span {
+  margin: 0;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div .ad-title-time > span:hover {
+  color: #777777;
+}
+
+#app #main .container .ad .ad-left .ad-left-title div .ad-title-time i {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #584242;
+  border-radius: 50%;
+  font-style: normal;
+  text-align: center;
+  line-height: 24px;
+}
+
+#app #main .container .ad .ad-left .ad-left-top {
+  height: 370px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 20px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item img {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right {
+  width: 260px;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-title {
+  font-size: 14px;
+  color: #666666;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-title:hover {
+  color: #ff0100;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon span {
+  font-size: 12px;
+  padding: 2px 6px;
+  margin-right: 5px;
+  border-radius: 1px;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .half-price {
+  color: #ff0100;
+  border-radius: 2px;
+  border: 1px solid #ffc5c7;
+  background-color: #fff3f3;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .rob-buy {
+  background-color: #c24cff;
+  color: #fff;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .hot-buy {
+  background-color: #ff373c;
+  color: #fff;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-price span {
+  font-size: 22px;
+  color: #ff0100;
+  margin-right: 5px;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-price b {
+  font-size: 14px;
+  color: #9a9a9a;
+  text-decoration: line-through;
+  font-weight: normal;
 }

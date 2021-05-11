@@ -108,6 +108,7 @@
 
     #main{
         background-image: url(https://img.alicdn.com/imgextra/i3/2053469401/O1CN01OBKQiY2JJhuIZSKKR-2053469401.png);
+        padding-bottom:20px;
         .container{
             
             .banner{
@@ -323,6 +324,8 @@
                 width: 100%;
                 height: 860px;
                 margin-top: 20px;
+              
+                @include flex();
                 .ad-left{
                     width: 880px;
                     height: 100%;
@@ -390,7 +393,9 @@
                     }
                     .ad-left-top{
                         height: 370px;
+                        margin-bottom: 20px;
                         background-color: #fff;
+                        overflow: hidden;
                         @include flex();
                         flex-wrap: wrap;
                        .left-top-item{
@@ -401,6 +406,10 @@
                            border-bottom: 1px solid #eee;
                            user-select: none;
                            @include flex();
+                           transition: box-shadow .2s linear;
+                                &:hover{
+                                    box-shadow: 0 0 15px rgba(0,0,0,.2);
+                                }
 
                            
                            img{
@@ -465,10 +474,513 @@
                            
                        }
                     }
+                    
+                    .ad-left-down{
+                        background-color: #fff;
+                        height: 475px;
+                        .ad-left-title{
 
+                             div:nth-of-type(1){
+                                 span{
+                                     font-size: 15px;
+                                     padding: 3px 0;
+                                     
+                                 }
+                                 span:nth-of-type(2){
+                                    border-bottom: 2px solid transparent;
+                                 }
+                             }
 
+                            .ad-title-nowTime{
+                                margin-left: 50px;
+                                margin-right: 0;
+                                color: #f66046;
+                                border-bottom: 2px solid #f66046;
+                            }
+                        }
+
+                        .ad-left-downTop{
+                            @include flex(row,space-between);
+                            width: 100%;
+                            height: 155px;
+                            padding: 8px 20px;
+                            >div:nth-child(odd){
+                                background-color: #f6e5e2;
+                            }
+                            >div:nth-child(even){
+                                background-color: rgba(0,191,255,.2); 
+                            }
+                            .downTop-item{
+                               width: 410px;
+                               height: 100%;
+                               border-radius: 10px;
+                               padding: 20px;
+                               box-shadow: 0 1px 8px rgba(0,0,0,.3);
+                               cursor: pointer;
+                               user-select: none;
+                               @include flex(row,space-between);
+                               transition: box-shadow .2s linear;
+                                &:hover{
+                                    box-shadow: 0 0 15px rgba(0,0,0,.2);
+                                }
+
+                               .downTop-item-imgLeft{
+                                   width: 40px;
+                                   height: 62px;
+
+                               }
+
+                               .downTop-item-imgRight{
+                                   width: 123px;
+                                   height: 123px;
+                                   border-radius: 50%;
+                               }
+
+                               >div{
+                                   width: 180px;
+                                   height: 100%;
+                                   p{
+                                       font-size: 16px;
+                                       color: #333333;
+                                       height: 45px;
+                                       margin: 0;
+                                       &:hover{
+                                           color: #ff0100;
+                                       }
+
+                                   }
+                                   span{
+                                       font-size: 14px;
+                                       color: #AAAAAA;
+                                       b{
+                                           font-size: 16px;
+                                           color: #616161;
+                                           font-weight: 500;
+                                       }
+                                   }
+
+                                   div{
+                                       width: 100%;
+                                      margin-top: 10px;
+                                       @include flex(row,space-between);
+                                       :nth-child(1){
+                                           font-size: 15px;
+                                           color: #f66046;
+                                       }
+                                       :nth-child(2){
+                                           font-size: 13px;
+                                           padding: 0 5px;
+                                           border: 1px solid #ffc1d4;
+                                           border-radius: 4px;
+                                           line-height: 18px;
+                                           text-align: center;
+                                           color: #ff7c65;
+                                       }
+                                   }
+                               }
+                            }
+                        }
+
+                        .ad-left-downUp{
+                            width: 100%;
+                            @include flex();
+                            .downUp-item{
+                                width: 20%;
+                                padding: 10px;
+                                position: relative;
+                                transition: box-shadow .2s linear;
+                                &:hover{
+                                    box-shadow: 0 0 15px rgba(0,0,0,.2);
+                                }
+                                .downUp-item-img img{
+                                    width: 100%;
+                                    height: 160px;
+                                    margin-bottom: 5px;
+                                }
+                              .ad-item-content{
+
+                                  p{
+                                      width: 100%;
+                                      font-size: 14px;
+                                      color: #656565;
+                                      margin: 0 0 5px 0;
+                                      overflow: hidden;
+                                      text-overflow: ellipsis;
+                                      white-space: nowrap;
+                                  }
+                                  >span{
+                                      font-size: 12px;
+                                      color: #9a9a9a;
+                                      
+                                      b{
+                                          font-size: 14px;
+                                          color: #ff852f;
+                                          font-weight: 300;
+                                      }
+                                  }
+                                  .item-content-price{
+                                      width: 100%;
+                                      height: 30px;
+                                      @include flex(row,space-between);
+                                      :nth-child(1){
+                                          font-size: 16px;
+                                          color: #f66046;
+                                      }
+                                      :nth-child(2){
+                                          font-size: 13px;
+                                          padding: 0 5px;
+                                          border: 1px solid #ffc1d4;
+                                          border-radius: 4px;
+                                          line-height: 18px;
+                                          text-align: center;
+                                          color: #ff7c65;
+                                      }
+                                  }
+                              }
+
+                              .downUp-item-icon{
+                                  display: inline-block;
+                                  width: 26px;
+                                  height: 26px;
+                                  background-color: rgba(255,249,248,1);
+                                  position: absolute;
+                                  left: 10px;
+                                  top: 10px;
+                                  border-radius: 0 0 5px;
+                                  text-align: center;
+                                  line-height: 26px;
+                                  color: #f66046;
+                                  i{
+                                      font-size: 14px;
+                                      font-style: normal;
+                                      
+                                  }
+
+                              }
+
+                            }
+                        }
+                    }
+
+                }
+
+                .ad-right{
+                    width: 300px;
+                    height: 860px;
+                    margin-left: 20px;
+
+                    .ad-right-title{
+                        width: 100%;
+                        height: 50px;
+                        padding: 0 15px;
+                        background-color: #fff;
+                        @include flex();
+                        i{
+                            display: inline-block;
+                            width: 4px;
+                            height: 20px;
+                            background-color: #fe2e54;
+                            margin-right: 10px;
+                        }
+                        span{
+                            font-size: 18px;
+                            color: #555555;
+                            font-weight: 700;
+                        }
+                    }
+                    .ad-right-content{
+                        width: 100%;
+                        height: 810px;
+                        background-image: url("https://img.alicdn.com/imgextra/i1/2053469401/O1CN01IkcJjV2JJhxMcnjUm_!!2053469401.jpg");
+
+                        .right-content-header{
+                            width: 100%;
+                            height: 150px;
+                            padding-top: 20px;
+                            @include flex(column,center);
+                            img{
+                                width: 70px;
+                                height: 70px;
+                                margin-bottom: 10px;
+                            }
+                            h4{
+                                font-size: 19px;
+                                font-weight: 600;
+                                color: #000000;
+
+                            }
+                            p{
+                                font-size: 15px;
+                                color: #000;
+                                margin: 0;
+                            }
+                        }
+
+                        .right-content-list{
+
+                            .right-content-listItem{
+                                width: 100%;
+                                padding:  10px 10px 0 10px;
+                                @include flex();
+                                
+                                 img{
+                                     width: 150px;
+                                     height: 150px;
+                                     border-radius: 10px;
+                                     margin-right: 10px;
+                                 }
+                                 div{
+
+                                     p{
+                                         height: 40px;
+                                         font-size: 14px;
+                                         color: #555555;
+                                         &:hover{
+                                             color: #f66046;
+                                         }
+
+                                     }
+                                     span{
+                                         font-size: 16px;
+                                         color: #ff0100;
+
+                                         b{
+                                             font-size: 14px;
+                                             color: #9a9a9a;
+                                             text-decoration:line-through;
+                                             font-weight: 400;
+                                         }
+                                     }
+                                 }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .goods-list{
+                margin-top: 20px;
+                background-color: #fff;
+                width: 100%;
+                .goods-title{
+                    width: 100%;
+                    height: 50px;
+                    box-sizing: border-box;
+                    user-select: none;
+                    padding: 0 15px;
+                    color: #757575;
+                    font-size: 14px;
+                    border-bottom: 1px solid #f1f1f1;
+                    @include flex(row,space-between);
+                    .goods-title-left{
+                        @include flex();
+                        i{
+                            display: inline-block;
+                            width: 4px;
+                            height: 20px;
+                            background-color: #fe2e54;
+                            margin-right: 10px;
+                        }
+
+                        h5{
+                            font-size: 18px;
+                            color: #555555;
+                            font-weight: 700;
+                            margin: 0;
+                        }
+                        span{
+                            margin:0 20px;
+                            color: #929292;
+                        }
+                    }
+
+                    .goods-title-right{
+
+                        b{
+                            margin-left: 10px;
+                            color: #fe2e54;
+                        }
+                    }
+                }
+
+                .list-content{
+                    width: 100%;
+                    @include flex();
+                    flex-wrap: wrap; 
+                    .list-item{
+                        box-sizing: border-box;
+                        width: 20%;
+                        height: 340px;
+                        border: 1px solid transparent;
+                        border-bottom: 1px solid #f1f1f1;
+                        border-right: 1px solid #f1f1f1;
+                        padding: 15px;
+                        cursor: pointer;
+                        transition: box-shadow .2s linear;
+                        &:hover{
+                            border-color: transparent;
+                            box-shadow: 0 0 15px rgba(0,0,0,.2);
+                        }
+
+                        &:hover .item-text{
+                            color: #fc4d52;
+                        }
+                        .item-top img{
+                            width: 100%;
+                            height: 210px;
+                        }
+                        .item-down{
+                            width: 100%;
+                           .item-title{
+                               margin: 10px 0;
+                               font-size: 14px;
+                               color: #494949;
+                               @include flex();
+                               .item-icon{
+                                   display: inline-block;
+                                   width: 15px;
+                                   height: 18px;
+                                   background: url('../icon/微信图片_20210511170434.png') center no-repeat;
+                                   background-size: contain;
+                                   margin-right: 5px;
+                                   color: #fff;
+                                   font-style: normal;
+                               }
+                               .item-text{
+                                   overflow: hidden;
+                                   text-overflow: ellipsis;
+                                   white-space: nowrap;
+                               }
+                           }
+
+                           .item-sale{
+                              width: 100%;
+                              @include flex(row,space-between);
+                              font-size: 13px;
+                              color: #9a9a9a;
+                              margin-bottom: 5px;
+                              i{
+                                  margin-left: 3px;
+                                  font-style: normal;
+                              }
+
+                           }
+
+                           .item-price{
+                               @include flex(row,space-between);
+                               color: #fc4d52;
+                               margin-bottom: 0;
+                               
+                               span:nth-of-type(1){
+                                   font-size: 18px;
+                                   font-weight: 600;
+                                   i{
+                                       font-size: 22px;
+                                       font-style: normal;
+                                   }
+                               }
+
+                               span:nth-of-type(2){
+                                   padding: 1px 5px;
+                                   border: 1px solid #ff0100;
+                                   font-weight: 400;
+                                   border-radius: 3px;
+                                   font-size: 13px;
+                                   text-align: center;
+                                   line-height: 18px;
+                                   i{
+                                       font-size: 15px;
+                                       font-style: normal;
+                                   }
+                               }
+
+                           }
+                        }
+
+                    }
+                }
+
+                #page{
+                    width: 100%;
+                    height: 90px;
+                    padding: 20px 0;
+                    p{
+
+                        &:hover{
+                            color: #fff !important;
+                            background: rgba(201,201,201,.7);
+                        }
+                    }
                 }
             }
         }
+    }
+
+    #footer{
+        width: 100%;
+        height: 180px;
+        background: #1e1e1e;
+       .container{
+           height: 100%;
+           padding: 20px 0;
+           user-select: none;
+           @include flex(column,center);
+           .copyright-ul{
+               @include flex();
+               cursor: pointer;
+              li{
+                  list-style: none;
+                  padding: 0 25px;
+                  color: rgba(255,255,255,.6);
+                  font-size: 12px;
+                  height: 14px;
+                  line-height: 14px;
+                  &:hover{
+                      text-decoration: underline;
+                  }
+              }
+
+              .ul-item{
+                  border-right: 1px solid rgba(255,255,255,.6);
+              }
+           }
+
+           p{
+               font-size: 12px;
+               color: rgba(255,255,255,.6);
+               margin: 10px 0;
+           }
+           .copyright-txt{
+               @extend p;
+              span{
+                  margin: 0 5px;
+                  
+              }
+              :nth-last-child(1){
+                  text-decoration: underline;
+                  cursor: pointer;
+              }
+           }
+       }
+
+       .float-btns{
+           width: 50px;
+           height: 200px;
+           box-sizing: border-box;
+           position: fixed;
+           bottom: 70px;
+           right: 50px;
+           border: 1px solid rgba(229,229,229,1);
+           @include grid(4,25%,1,100%,0);
+
+           p{
+               background: #fcfcfc;
+               border-top: 1px solid rgba(229,229,229,1);
+               cursor: pointer;
+               margin: 0;
+           }
+       }
+
     }
 }

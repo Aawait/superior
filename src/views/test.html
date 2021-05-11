@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/MyPromise.js"></script>
+</head>
+<body>
+    <script>
+        const res = new MyPromise({
+            url:'../api/listData1.php',
+        });
+
+        res.then(value=>{
+            // value = JSON.parse(value);
+            // console.log(value);
+        });
+
+        let str = "3.42427元券";
+        // let str = "原价 74.97";
+        // let str = "销量 4.3万";
+    //    const reg = /\d+\.?\d+/;
+        const reg = new RegExp(/\d+\.?\d{0,2}/);
+        console.log(reg);
+        // let result = /\d+\.?\d+/.exec(str);
+        console.log(reg.exec(str));
+    </script>
+</body>
+</html>

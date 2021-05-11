@@ -1,5 +1,4 @@
 
-
 // swiper轮播图
 class MySwiper{
     constructor(){
@@ -67,7 +66,6 @@ class MySwiper{
                 delay:4000,        // 设置自动轮播时间
             },   
             
-        
             speed:300,  // 轮播速度
         });
     }
@@ -75,3 +73,80 @@ class MySwiper{
 }
 
  new MySwiper();
+
+
+ // 渲染列表数据
+ class GoodsList{
+     constructor(name,url){
+          this.box = document.querySelector(name);
+          this.url = url;
+          this.page = 1;
+          this.length = 100;
+          this.getData(this.url,this.page,this.length);
+          this.init();
+     }
+     init(){
+        // 初始化分页
+          new Pagination('#page',{
+            pageInfo: {
+                pagenum: 1, // 当前页数
+                pagesize: this.length, // 每页多少条
+                total: this.count, // 数据总数
+                totalpage: Math.ceil(this.count / this.length ) // 页码总数
+              },
+              textInfo: {
+                first: '首页',
+                prev: '上一页',
+                next: '下一页',
+                last: '尾页'
+              },
+          })
+     }
+
+     async getData(url,page,length){
+         let res = await new MyPromise({
+              url,
+              type:"POST",
+              data:{
+                page,
+                length
+              }
+         });
+         res = JSON.parse(res);
+         this.count = res.total.count;
+         this.render(res.data);
+     }
+
+     render(data){
+         let str = '';
+         const reg =new RegExp(/\d+\.?\d{0,2}/);
+         data.forEach(item=>{
+            
+             str += `<div class='list-item' goods_id="${item.id}">
+             <div class='item-top'><img
+                     src="${item.img}"
+                     alt=""></div>
+             <div class='item-down'>
+                 <p class='item-title'>
+                     <i class='item-icon'></i>
+                     <span class='item-text'>${item.title}</span>
+                 </p>
+                 <p class='item-sale'>
+                     <span>原价<i>${reg.exec(item.old_price)[0]}</i></span>
+                     <span>销量<i>${reg.exec(item.sales)[0]}万</i></span>
+                 </p>
+                 <p class='item-price'>
+                     <span>￥<i>${item.now_price}</i></span>
+                     <span><i>${reg.exec(item.cheap)[0]}</i>元券</span>
+                 </p>
+             </div>
+         </div>`
+         });
+        
+         this.box.innerHTML = str;
+     }
+
+
+ }
+
+ new GoodsList('.list-content','../api/listData1.php');

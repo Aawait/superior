@@ -82,10 +82,11 @@ class MySwiper{
           this.url = url;
           this.page = 1;
           this.length = 100;
-          this.getData(this.url,this.page,this.length);
+          this.count = 3500;
           this.init();
      }
      init(){
+
         // 初始化分页
           new Pagination('#page',{
             pageInfo: {
@@ -100,6 +101,10 @@ class MySwiper{
                 next: '下一页',
                 last: '尾页'
               },
+              change: index =>{
+                  this.getData(this.url,index,this.length);
+                  window.scrollTo(0,0);
+              }
           })
      }
 
@@ -113,7 +118,7 @@ class MySwiper{
               }
          });
          res = JSON.parse(res);
-         this.count = res.total.count;
+         this.count = res.total.count;  //获取数据总数，这里没有用。异步拿不到这个属性
          this.render(res.data);
      }
 
@@ -128,7 +133,7 @@ class MySwiper{
                      alt=""></div>
              <div class='item-down'>
                  <p class='item-title'>
-                     <i class='item-icon'></i>
+                     <img src="https://cmsstatic.ffquan.cn/images/tmall.png?v=2021323305356" alt="" class="item-icon">
                      <span class='item-text'>${item.title}</span>
                  </p>
                  <p class='item-sale'>
@@ -145,8 +150,108 @@ class MySwiper{
         
          this.box.innerHTML = str;
      }
-
+    
 
  }
 
  new GoodsList('.list-content','../api/listData1.php');
+
+
+ // 悬浮搜索框功能
+ class FloatNav{
+     constructor(ele){
+         this.ele = document.querySelector(ele);
+         this.init();
+     }
+     init(){
+         this.hedaerTop = document.querySelector('#header').offsetHeight;
+         this.navTop = document.querySelector('#nav').offsetHeight;
+
+          // addEventListener 事件监听绑定 解决多个window.onscroll 冲突覆盖问题
+         window.addEventListener("scroll",e=>{
+            if(window.scrollY >= (this.hedaerTop + this.navTop)){
+                this.ele.style.height = '50px';
+                this.ele.style.opacity = 1;
+            }else{
+                 this.ele.style.height = 0;
+                 this.ele.style.opacity = 0;
+            }
+         });
+    
+     }
+
+ }
+
+ new FloatNav('#hide-nav');
+
+
+ // ad区倒计时功能
+ class CountDown{
+     constructor(ele){
+       this.ele = document.querySelector(ele);
+       this.endTime =new Date().getTime()+24*60*60*1000;
+       this.init();
+       this.getTime();
+     }
+     init(){
+         this.hours = this.ele.querySelector('.title-time-hours');
+         this.minutes = this.ele.querySelector('.title-time-minutes');
+         this.seconds = this.ele.querySelector('.title-time-seconds');
+     }
+
+     getTime(){
+             setInterval(()=>{
+                 // 获取当前时间毫秒数 === new Date().getTime();
+                  let nowTime = Date.now();
+     
+                  // 计算结束时间到开始时间的差值 把毫秒转为以秒为单位
+                  let time = (this.endTime - nowTime) / 1000;
+                  
+                  let seconds = parseInt(time % 60);  // 获取剩下的秒数
+                  
+                  let minutes = Math.floor((time / 60) % 60);  // 获取剩下的分钟
+     
+                  let hours =  Math.floor(time / 60 / 60) ;   // 获取剩下的小时
+                  
+                  this.seconds.innerText = seconds < 10 ? '0' + seconds : seconds;
+                  this.minutes.innerText = minutes < 10 ? '0' + minutes : minutes;
+                  this.hours.innerText = hours < 10 ? '0' + hours : hours; 
+             },1000);
+     }  
+
+ }
+
+ new CountDown('.ad-title-time');
+
+
+ // 回到顶部按钮功能
+ class BackTop{
+     constructor(btn){
+        this.btn = document.querySelector(btn);
+        this.init();
+     }
+     init(){
+         this.bannerTop = document.querySelector('.banner').offsetHeight;
+         this.hedaerTop = document.querySelector('#header').offsetHeight;
+         this.navTop = document.querySelector('#nav').offsetHeight;
+
+         this.scrollTop = this.bannerTop + this.hedaerTop + this.navTop;
+        
+         // addEventListener 事件监听绑定 解决多个window.onscroll 冲突覆盖问题
+         window.addEventListener("scroll",e=>{
+
+            if(window.scrollY >= this.scrollTop){
+                this.btn.style.height = '50px';
+            }else{
+                this.btn.style.height = 0;
+            }
+         });
+        
+         this.btn.onclick = () =>{
+             window.scrollTo(0,0);
+         }
+     }
+
+ }
+
+ new BackTop('.back-top');  

@@ -1,8 +1,8 @@
 <?php
   
-  $page = $_POST['page'];
-  $length = $_POST['length'];
-  $start = ($page-1)*$length;
+  $page = $_POST['page'];  // 获取页数
+  $length = $_POST['length'];  // 获取请求多少条数据
+  $start = ($page-1)*$length;  // 从多少条数据开始搜索
 
  // 连接数据库
   $con = mysqli_connect("localhost","root","123456","superior");

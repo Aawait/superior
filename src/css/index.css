@@ -112,19 +112,116 @@
   align-items: center;
 }
 
-#app #nav .container a {
+#app #nav .container .show-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#app #nav .container .show-nav a {
   padding: 0 30px;
   color: #ffffff;
   line-height: 35px;
   font-size: 14px;
 }
 
-#app #nav .container a:hover {
+#app #nav .container .show-nav a:hover {
   background-color: #E41E43;
 }
 
-#app #nav .container .nav-hot {
+#app #nav .container .show-nav .nav-hot {
   background-color: #E41E43;
+}
+
+#app #nav #hide-nav {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(170, 170, 170, 0.2);
+  background-color: #fff;
+  z-index: 999;
+  transition: opacity .3s linear;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#app #nav #hide-nav .hide-nav {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#app #nav #hide-nav .hide-nav .hide-list {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#app #nav #hide-nav .hide-nav .hide-list li {
+  height: 100%;
+  padding: 0 5px;
+  margin-right: 6px;
+  list-style: none;
+}
+
+#app #nav #hide-nav .hide-nav .hide-list li a {
+  display: inline-block;
+  font-size: 14px;
+  height: 100%;
+  line-height: 50px;
+  color: #666666;
+  text-decoration: none;
+}
+
+#app #nav #hide-nav .hide-nav .hide-list li a:hover {
+  color: #ff435e;
+}
+
+#app #nav #hide-nav .hide-nav .hide-sreach {
+  width: 340px;
+  height: 30px;
+  padding-left: 20px;
+  border: 2px solid #fe2e54;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  margin-right: 1px;
+}
+
+#app #nav #hide-nav .hide-nav .hide-sreach .float-search {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+#app #nav #hide-nav .hide-nav .hide-sreach .hide-btn {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fe2e54;
+  border: none;
+}
+
+#app #nav #hide-nav .hide-nav .hide-sreach .hide-btn img {
+  width: 20px;
+  height: 20px;
 }
 
 #app #main {
@@ -594,7 +691,7 @@
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > div:nth-child(even) {
-  background-color: rgba(0, 191, 255, 0.2);
+  background-color: #faedff;
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item {
@@ -636,7 +733,7 @@
   font-size: 16px;
   color: #333333;
   height: 45px;
-  margin: 0;
+  margin-bottom: 5px;
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item > div p:hover, #app #main #footer .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item > div .copyright-txt:hover, #app #footer #main .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item > div .copyright-txt:hover {
@@ -975,12 +1072,9 @@
 #app #main .container .goods-list .list-content .list-item .item-down .item-title .item-icon {
   display: inline-block;
   width: 15px;
-  height: 18px;
-  background: url("../icon/微信图片_20210511170434.png") center no-repeat;
-  background-size: contain;
+  height: 15px;
   margin-right: 5px;
-  color: #fff;
-  font-style: normal;
+  vertical-align: middle;
 }
 
 #app #main .container .goods-list .list-content .list-item .item-down .item-title .item-text {
@@ -1108,21 +1202,40 @@
 
 #app #footer .float-btns {
   width: 50px;
-  height: 200px;
   box-sizing: border-box;
   position: fixed;
   bottom: 70px;
   right: 50px;
   border: 1px solid #e5e5e5;
-  display: grid;
-  grid-template-rows: repeat(4, 25%);
-  grid-template-columns: repeat(1, 100%);
-  grid-gap: 0;
 }
 
 #app #footer .float-btns p, #app #footer .float-btns .container .copyright-txt, #app #footer .container .float-btns .copyright-txt {
+  height: 50px;
   background: #fcfcfc;
   border-top: 1px solid #e5e5e5;
   cursor: pointer;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app #footer .float-btns p:hover, #app #footer .float-btns .container .copyright-txt:hover, #app #footer .container .float-btns .copyright-txt:hover {
+  background-color: #f3f3f3;
+}
+
+#app #footer .float-btns p span, #app #footer .float-btns .container .copyright-txt span, #app #footer .container .float-btns .copyright-txt span {
+  color: #888888;
+  font-size: 12px;
+}
+
+#app #footer .float-btns p:nth-of-type(1), #app #footer .float-btns .container .copyright-txt:nth-of-type(1), #app #footer .container .float-btns .copyright-txt:nth-of-type(1) {
+  border: none;
+}
+
+#app #footer .float-btns .back-top {
+  height: 0;
+  overflow: hidden;
+  transition: height .2s linear;
 }

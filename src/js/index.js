@@ -1,9 +1,9 @@
+// 首页
 
 // swiper轮播图
 class MySwiper{
     constructor(){
        this.init();
-       this.content();
     }
     init(){
         this.swiper = document.querySelector('.swiper-container');
@@ -21,6 +21,13 @@ class MySwiper{
             })
         }
         new Swiper('.swiper-container',{
+            /**
+             * fadeEffect
+             * fade效果参数。可选参数：crossFade。
+               默认：false。关闭淡出。过渡时，原slide透明度为1（不淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+               可选值：true。开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+             */
+
             direction:'horizontal',  // 播放方向水平还是垂直
             loop:true,               // 循环播放选项
         
@@ -47,32 +54,64 @@ class MySwiper{
         
     }
 
-    content(){
-        new Swiper('.swiper-content',{
-            direction:'horizontal',  // 播放方向水平还是垂直
-            loop:true,               // 循环播放选项
-            effect : 'fade',
-            /**
-             * fadeEffect
-             * fade效果参数。可选参数：crossFade。
-               默认：false。关闭淡出。过渡时，原slide透明度为1（不淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
-               可选值：true。开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
-             */
-            fadeEffect:{
-                crossFade:true,
-            },
-            autoplay:{              // 自动轮播
-                disableOnInteraction: false,  // 操作banner后是否继续轮播，ture为停止，false为继续轮播
-                delay:4000,        // 设置自动轮播时间
-            },   
-            
-            speed:300,  // 轮播速度
-        });
-    }
-
 }
 
  new MySwiper();
+
+
+ // 轮播商品功能
+ class WheelGoods{
+      constructor(name,url){
+          this.box = document.querySelector(name);
+          this.url = url;
+          this.id = 1;
+          this.length = 3;
+          this.getData(this.url,this.id,this.length);
+          this.time();
+
+      }
+      time(){
+          // 商品每隔10秒自动轮播
+           let seconds = 0.5*60*60*1000;
+            setInterval(()=>{
+                this.box.innerHTML = '';
+                this.id++;
+                this.getData(this.url,this.id,this.length);
+            },seconds);
+      }
+      async getData(url,page,length){
+          let res = await new MyPromise({
+              url,
+              type : "POST",
+              data:{
+                page,
+                length
+              }
+          });
+        res = JSON.parse(res);
+        this.count = res.total.count;
+        if(this.id >= this.count){
+            this.id = 1;
+        }
+
+        this.render(res.data);
+
+      }
+
+      render(data){
+          data.forEach(item=>{
+              this.box.innerHTML += `
+              <a href="../views/details.html?id=${item.id}" goods_id=${item.id}>
+              <i>买一送一</i>
+              <span>${item.title}</span>
+              </a>
+              `
+          });
+
+      }
+ }
+
+ new WheelGoods('.wheel-list','../api/listData1.php');
 
 
  // 渲染列表数据
@@ -127,7 +166,7 @@ class MySwiper{
          const reg =new RegExp(/\d+\.?\d{0,2}/);
          data.forEach(item=>{
             
-             str += `<div class='list-item' goods_id="${item.id}">
+             str += `<a href="../views/details.html?id=${item.id}" class='list-item' goods_id="${item.id}" target="_blank">
              <div class='item-top'><img
                      src="${item.img}"
                      alt=""></div>
@@ -145,7 +184,7 @@ class MySwiper{
                      <span><i>${reg.exec(item.cheap)[0]}</i>元券</span>
                  </p>
              </div>
-         </div>`
+         </a>`
          });
         
          this.box.innerHTML = str;
@@ -184,6 +223,79 @@ class MySwiper{
 
  new FloatNav('#hide-nav');
 
+
+ // ad区商品自动更换功能
+ class Adgoods{
+        constructor(calssName,url){
+            this.box = document.querySelector(calssName);
+            this.url = url;
+            this.id = 26; // 这里从第101条开始请求，因为后端会-1 再*长度 所以从26开始
+            this.length = 4;
+            this.init();
+            this.getData(this.url,this.id,this.length);
+        }
+
+        init(){
+
+            // 点击换一换按钮
+            this.btn = document.querySelector('.left-top-btn');
+            this.btn.onclick = () =>{
+                this.id++;
+                this.getData(this.url,this.id,this.length);
+            }
+            
+            // 商品数据一小时自动更新一次
+            let time = 1*60*60*1000;
+            setInterval(()=>{
+                this.id++;
+                this.getData(this.url,this.id,this.length);
+            },time);
+        }
+       async getData(url,page,length){
+          let res = await new MyPromise({
+              type:"POST",
+              url,
+              data:{
+                 page,
+                 length
+              }
+          });
+
+          res = JSON.parse(res);
+          this.render(res.data);
+        }
+
+        render(data){
+           let str = '';
+           const reg =new RegExp(/\d+\.?\d{0,2}/);
+           data.forEach(item=>{
+               str += `
+               <a href="../views/details.html?id=${item.id}" class='left-top-item' goods_id="${item.id}">
+                    <div class='top-item-left'>
+                        <img src="${item.img}"
+                            alt="">
+                    </div>
+                    <div class='top-item-right'>
+                        <p class='item-right-title'>${item.title}</p>
+                        <p class='item-right-icon'>
+                            <span class='half-price'>第二件半价</span>
+                        </p>
+                        <p class='item-right-price'>
+                            <span>￥${reg.exec(item.now_price)[0]}</span>
+                            <b>￥${reg.exec(item.old_price)[0]}</b>
+                        </p>
+                    </div>
+                </a>
+               `;
+
+               this.box.innerHTML = str;
+           })
+        }
+
+ }
+
+ new Adgoods('.left-top-goods','../api/listData1.php');
+ 
 
  // ad区倒计时功能
  class CountDown{
@@ -255,3 +367,7 @@ class MySwiper{
  }
 
  new BackTop('.back-top');  
+
+
+
+ 

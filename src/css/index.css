@@ -365,7 +365,7 @@
 #app #main .container .banner .banner-right .banner-right-list {
   width: 100%;
   height: 155px;
-  padding: 10px 0 10px 10px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: #fff;
   overflow: hidden;
@@ -394,29 +394,20 @@
   color: #555555;
 }
 
-#app #main .container .banner .banner-right .banner-right-list .swiper-content {
+#app #main .container .banner .banner-right .banner-right-list .wheel-list {
   width: 300px;
 }
 
-#app #main .container .banner .banner-right .banner-right-list .swiper-content dl {
+#app #main .container .banner .banner-right .banner-right-list .wheel-list a {
   width: 100%;
-  height: 100px;
-  margin: 0;
-  overflow: hidden;
-}
-
-#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin: 12px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd i {
+#app #main .container .banner .banner-right .banner-right-list .wheel-list a i {
   display: inline-block;
   font-style: normal;
   height: 18px;
@@ -429,12 +420,16 @@
   margin-right: 6px;
 }
 
-#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd a {
+#app #main .container .banner .banner-right .banner-right-list .wheel-list a span {
+  width: 230px;
   font-size: 14px;
   color: #555555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-#app #main .container .banner .banner-right .banner-right-list .swiper-content dl dd a:hover {
+#app #main .container .banner .banner-right .banner-right-list .wheel-list a span:hover {
   color: #FE2E54;
 }
 
@@ -499,7 +494,6 @@
   padding: 0 15px;
   box-sizing: border-box;
   background-color: #fff;
-  border-bottom: 1px solid #eee;
 }
 
 #app #main .container .ad .ad-left .ad-left-title .ad-title-icon {
@@ -567,10 +561,13 @@
 }
 
 #app #main .container .ad .ad-left .ad-left-top {
-  height: 370px;
+  height: 374px;
   margin-bottom: 20px;
   background-color: #fff;
   overflow: hidden;
+}
+
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -578,12 +575,12 @@
   flex-wrap: wrap;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item {
   box-sizing: border-box;
   width: 50%;
-  padding: 20px;
+  padding: 15px 20px;
   border-right: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
   user-select: none;
   display: flex;
   flex-direction: row;
@@ -592,63 +589,66 @@
   transition: box-shadow .2s linear;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item:hover {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item img {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item img {
   width: 120px;
   height: 120px;
   margin-right: 20px;
   cursor: pointer;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right {
   width: 260px;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-title {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-title {
   font-size: 14px;
   color: #666666;
   margin: 10px 0;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-title:hover {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-title:hover {
   color: #ff0100;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon span {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-icon span {
   font-size: 12px;
   padding: 2px 6px;
   margin-right: 5px;
   border-radius: 1px;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .half-price {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-icon .half-price {
   color: #ff0100;
   border-radius: 2px;
   border: 1px solid #ffc5c7;
   background-color: #fff3f3;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .rob-buy {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-icon .rob-buy {
   background-color: #c24cff;
   color: #fff;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-icon .hot-buy {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-icon .hot-buy {
   background-color: #ff373c;
   color: #fff;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-price span {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-price span {
   font-size: 22px;
   color: #ff0100;
   margin-right: 5px;
 }
 
-#app #main .container .ad .ad-left .ad-left-top .left-top-item .top-item-right .item-right-price b {
+#app #main .container .ad .ad-left .ad-left-top .left-top-goods .left-top-item .top-item-right .item-right-price b {
   font-size: 14px;
   color: #9a9a9a;
   text-decoration: line-through;
@@ -684,6 +684,7 @@
   width: 100%;
   height: 155px;
   padding: 8px 20px;
+  border-top: 1px solid #eee;
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > div:nth-child(odd) {
@@ -1238,4 +1239,5 @@
   height: 0;
   overflow: hidden;
   transition: height .2s linear;
+  border-bottom: none;
 }

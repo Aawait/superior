@@ -8,6 +8,7 @@
     <title>详情页</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/details.css">
+    <script src="../lib/MyPromise.js"></script>
 
 </head>
 
@@ -43,7 +44,7 @@
         <div id='nav'>
             <div class='container'>
                 <div class='show-nav'>
-                    <a href="" class='nav-hot'>首页</a>
+                    <a href="../views/index.html" class='nav-hot'>首页</a>
                     <a href="">好货精选</a>
                     <a href="">疯抢榜</a>
                     <a href="">9块9包邮</a>
@@ -81,72 +82,396 @@
         <div id='main'>
             <div class='container'>
                 <div class='title-link'>
-                    <a href="">首页 </a><i>></i>
-                    <a href="">领券直播 </a><i>></i>
-                    <a href="">母婴 </a> <i>></i>
+                    <a href="../views/index.html">首页 </a><i>&gt;</i>
+                    <a href="">领券直播 </a><i>&gt;</i>
+                    <a href="">母婴 </a> <i>&gt;</i>
                     <span>优惠详情</span>
                 </div>
-                <div class='details-top'>
-                    <div class='details-content'>
-                        <div class='details-img'>
-                            <img src="https://img.alicdn.com/imgextra/i2/2672045966/O1CN01bWNiaZ1twTaGcSKc2_!!2672045966.jpg_400x400.jpg"
+                <div class='details-left'>
+                     <div class='details-top'>
+                        <!-- <div class='details-content'>
+                            <div class='details-img'>
+                                <img src="https://img.alicdn.com/imgextra/i2/2672045966/O1CN01bWNiaZ1twTaGcSKc2_!!2672045966.jpg_400x400.jpg"
+                                    alt="">
+                            </div>
+                            <div class='details-describe'>
+                                <p class='describe-title'>
+                                    <img src="https://cmsstatic.ffquan.cn/images/tmall.png?v=2021323305356" alt="">
+                                    <span>小鹿蓝蓝山楂棒棒糖宝宝健康零食</span>
+                                </p>
+                                <p class='describe-num'>
+                                    <span>上新时间：05-11 17:46</span>
+                                    <span>累计销量：<b>7.3</b> 万件</span>
+                                </p>
+                                <p class='describe-cheap'>
+                                    <span>独家优享：</span>
+                                    <span>10元券</span>
+                                </p>
+                                <p class='goods-label'>
+                                    <span>商品标签：</span>
+                                    <span class='labei-item'>天猫</span>
+                                    <span class='labei-item'>包邮</span>
+                                </p>
+                                <p class='goods-price'>
+                                    <span>￥9.9</span>
+                                    <span>￥19.9</span>
+                                </p>
+                                <p class='goods-btn'>
+                                    <button>领券购买</button>
+                                    <button><img src="https://cmsstatic.ffquan.cn//images/home/share.png?v=202104231430"
+                                            alt=""> 分享</button>
+                                </p>
+                            </div>
+                        </div> -->
+                        <!-- <div class='details-text'>
+                            <h5>推荐理由</h5>
+                            <p>【小鹿蓝蓝】山楂棒棒糖，精选山东寺头山楂，匠心工艺制作，还原自然好风味，宝宝超爱吃。餐前开胃，餐后助消化，0食品添加，妈妈更放心！</p>
+                            <p>此款商品正在进行限时活动，原来天猫售价19.9元，现有10元优惠券，到手仅需9.9元，绝对超值，有需要可速度下单哦！</p>
+                            <p class='feedback'>
+                                <span>我要举报：</span>
+                                <a href="">价格错误</a>
+                                <a href="">优惠券失效</a>
+                                <a href="">其他</a>
+                            </p>
+                        </div> -->
+                    </div> 
+                    <div class='details-msg'>
+                        <!-- <div class='details-title'>
+                            <h5>店铺信息</h5>
+                        </div>
+                        <div class='details-shop'>
+                            <div class='shop-left'>
+                                <img src="https://img.alicdn.com/imgextra//i1/2208170228854/O1CN01MGjxsq2FHBN8vuGdb_!!2208170228854.jpg"
+                                    alt="">
+                                <div class='shop-content'>
+                                    <p class='shop-title'>小鹿蓝蓝旗舰店</p>
+                                    <p class='shop-img'><img src="../icon/tim.png" alt=""></p>
+                                </div>
+                            </div>
+                            <div class='shop-right'>
+                                <div>
+                                    <span>宝贝描述</span>
+                                    <p><span>4.8</span> <b>高</b></p>
+                                </div>
+                                <div>
+                                    <span>卖家服务</span>
+                                    <p><span>4.8</span> <b>高</b></p>
+                                </div>
+                                <div>
+                                    <span>物流服务</span>
+                                    <p> <span>4.8</span> <b>高</b></p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class='goods-details'>
+                        <div class='details-title'>
+                            <h5>商品详情</h5>
+                        </div>
+                        <div class='details-content'>
+                            <img src="http://img.alicdn.com/imgextra/i3/2208170228854/O1CN01CkDmsJ2FHBRUEkYXa_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i4/2208170228854/O1CN01YHtkwz2FHBROMlqBI_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i3/2208170228854/O1CN01tlo0PI2FHBRNnK7vI_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i4/2208170228854/O1CN01f7ldY62FHBRUEl5oI_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i2/2208170228854/O1CN01YYe57A2FHBRTkJoAn_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i3/2208170228854/O1CN01aroun32FHBRQMrZr0_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i3/2208170228854/O1CN01M02TCk2FHBRVEsSgi_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i4/2208170228854/O1CN01B02NVW2FHBRSxqX7r_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i1/2208170228854/O1CN01yOjUnF2FHBRTkMgyr_!!2208170228854.jpg"
+                                alt="">
+                            <img src="http://img.alicdn.com/imgextra/i1/2208170228854/O1CN016b3fhO2FHBRQJ2b1Z_!!2208170228854.jpg"
                                 alt="">
                         </div>
-                        <div class='details-describe'>
-                            <p class='describe-title'>
-                                <img src="https://cmsstatic.ffquan.cn/images/tmall.png?v=2021323305356" alt="">
-                                <span>小鹿蓝蓝山楂棒棒糖宝宝健康零食</span>
-                            </p>
-                            <p class='describe-num'>
-                                <span>上新时间：05-11 17:46</span>
-                                <span>累计销量：<b>7.3</b> 万件</span>
-                            </p>
-                            <p class='describe-cheap'>
-                                <span>独家优享：</span>
-                                <span>10元券</span>
-                            </p>
-                            <p class='goods-label'>
-                                <span>商品标签：</span>
-                                <span class='labei-item'>天猫</span>
-                                <span class='labei-item'>包邮</span>
-                            </p>
-                            <p class='goods-price'>
-                                <span>￥9.9</span>
-                                <span>￥19.9</span>
-                            </p>
-                            <p class='goods-btn'>
-                                <button>领券购买</button>
-                                <button><img src="https://cmsstatic.ffquan.cn//images/home/share.png?v=202104231430"
-                                        alt=""> 分享</button>
-                            </p>
+                    </div>
+                </div>
+
+                <div class='details-right'>
+                    <div class='right-content'>
+
+                        <div class='like-list'>
+                            <div class='details-title'>
+                                <h5>可能喜欢</h5>
+                                <div>
+                                    <i>&lt;</i>
+                                    <span></span><span></span><span></span><span></span>
+                                    <i>&gt;</i>
+                                </div>
+                            </div>
+                            <div class='like-goods'>
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="http://img.alicdn.com/imgextra/i3/3525283028/O1CN01oKxYoS1YErv2Dd0AW_!!3525283028.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【拍六件】莎布蕾焦糖小方饼比利时风味零食</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥14.8</b>
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i1/2202830219/O1CN01m03cCY1DULNbooAQy_!!2202830219.png_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>馋了儿童零食新货山楂小方糕118g</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥18.9</b>
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="http://img.alicdn.com/imgextra/i2/3228235270/O1CN01TkLLZV1onhuOfpMe3_!!3228235270.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【拍10件】丹麦风味网红曲奇饼干</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥19.9</b>
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="	https://img.alicdn.com/imgextra/i3/1889243764/O1CN013F8kh41dfxPdkLZk9_!!1889243764.png_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>宝宝馋了混合水果干送婴儿幼儿食谱</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥18.9</b>
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i3/1937263177/O1CN01ChRG2r1ZL6y8pnP9o_!!1937263177.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【拍4件】巧克力夹心曲奇饼干58g*4盒</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥9.9</b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='hot-list'>
+                            <div class='details-title'>
+                                <h5>今日热销</h5>
+                            </div>
+                            <div class='hot-goods'>
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="http://img.alicdn.com/imgextra/i3/3423214569/TB2btj.lnnI8KJjSszbXXb4KFXa_!!3423214569.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【武夫人】颈肩腰腿骨关节专用膏药贴10贴</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥15.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>近两小时疯抢 <b>8.3万</b> 件</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i2/783668300/O1CN01x9fyIz2BBS1Oi2KWY_!!783668300.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>秒杀！仁和植物精油驱蚊贴【抵扣签到】</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥2.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>近两小时疯抢 <b>3.3万</b> 件</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="http://img.alicdn.com/imgextra/i4/190903296/O1CN01Tw8DWd1aDc6pYt795_!!190903296.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【五芳斋】4粽2味大肉粽100g*4只</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥2.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>近两小时疯抢 <b>1000</b> 件</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='receive-list'>
+                            <div class='details-title'>
+                                <h5>大家都在领</h5>
+                            </div>
+                            <div class='receive-goods'>
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/bao/uploaded/O1CN01PQBSoo1KiGin4Bz23_!!6000000001197-2-yinhe.png_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【黑人】抑菌护龈漱口水250ml*2瓶</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥15.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>53000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i2/1077716829/O1CN01iBYhyz20JjPQYrq28_!!1077716829.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【水密码】白金熨斗双肽电动蛇毒眼霜</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥99</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>32000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i2/6000000001043/O1CN017ojAfZ1JZjfsqdODx_!!6000000001043-0-at.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>拍2件！豆本豆唯甄豆奶定制款48盒</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥69.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>100000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i3/57478211/O1CN01TjIgqe2AWgjBn6EPP_!!57478211.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【仁和】排铅长高片增高多维矿物质片</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥14</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>39500</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i1/3435626655/O1CN01JIaXKo1z22TPWDNSW_!!3435626655-2-daren.png_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【顺丰包邮】杜蕾斯焕金超薄避孕套18只</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥39.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>36000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i1/1047071676/O1CN013KypHF1OFeSmdQogV_!!1047071676.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【拍3发5】威其诺懒人自热小火锅240g</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥6.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>37000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i4/192579350/O1CN017xrUPw2IwLnvAKpkF_!!192579350.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>【雅鹿大牌】纯棉短袖T恤</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥19.9</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>37000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class='goods-list'>
+                                    <div class='goods-img'><img
+                                            src="https://img.alicdn.com/imgextra/i3/2504158526/O1CN01bayLfc2CqxXCDAuUe_!!2504158526.jpg_310x310.jpg"
+                                            alt=""></div>
+                                    <div class='goods-content'>
+                                        <p class='goods-title'>网上卖的力速电动按摩器</p>
+                                        <p class='goods-price'>
+                                            <span>券后</span>
+                                            <b>￥29</b>
+                                        </p>
+                                        <p class='goods-sales'>
+                                            <span>已领取 <b>51000</b> 张</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class='details-text'>
-                        <h5>推荐理由</h5>
-                        <p>【小鹿蓝蓝】山楂棒棒糖，精选山东寺头山楂，匠心工艺制作，还原自然好风味，宝宝超爱吃。餐前开胃，餐后助消化，0食品添加，妈妈更放心！</p>
-                        <p>此款商品正在进行限时活动，原来天猫售价19.9元，现有10元优惠券，到手仅需9.9元，绝对超值，有需要可速度下单哦！</p>
-                        <p class='feedback'>
-                            <span>我要举报：</span>
-                            <a href="">价格错误</a>
-                            <a href="">优惠券失效</a>
-                            <a href="">其他</a>
-                        </p>
-                    </div>
-
                 </div>
-                <div class='details-msg'>
-                   <div class='details-title'>
-                       <h5>店铺信息</h5>
-                   </div>
-                   <div class='details-shop'>
-                       <div class='shop-left'>
-                           <img src="https://img.alicdn.com/imgextra//i1/2208170228854/O1CN01MGjxsq2FHBN8vuGdb_!!2208170228854.jpg" alt="">
-                           <div class='shop-content'>
-                               <p class='shop-title'>小鹿蓝蓝旗舰店</p>
-                               <p class='shop-img'><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fviewpoint.mydrivers.com%2FImg%2F20120329%2F2012032905434386.jpg&refer=http%3A%2F%2Fviewpoint.mydrivers.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623421706&t=580dbaaa7174992eddeec276fbbfac30" alt=""></p>
-                           </div>
-                       </div>
-                   </div>
+
+                <div class='details-footer'>
+                    <h6>内容声明：</h6>
+                    <p>
+                        本网站是一家中立的导购网站，网站中的商品信息均来自于互联网。如商品信息不同，可能是商品信息未及时更新引起，所有商品信息请以淘宝/天猫店铺内为准。网站提醒用户，购买商品前注意谨慎核实相关信息。如用户对商品/服务的标题
+                        、价格、详情等任何信息有任何疑问的，请在购买前与商品所属店铺经营者沟通确认。
+                        网站存在海量商品信息，如用户发现商品中有任何违法/违规信息，请 <a href="">立即反馈</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -188,6 +513,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/details.js"></script>
 </body>
 
 </html>

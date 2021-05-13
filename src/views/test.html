@@ -9,23 +9,18 @@
 </head>
 <body>
     <script>
-        const res = new MyPromise({
-            url:'../api/listData1.php',
-        });
-
-        res.then(value=>{
-            // value = JSON.parse(value);
-            // console.log(value);
-        });
-
-        let str = "3.42427元券";
+       
+        // let str = "3.42427元券";
         // let str = "原价 74.97";
         // let str = "销量 4.3万";
     //    const reg = /\d+\.?\d+/;
-        const reg = new RegExp(/\d+\.?\d{0,2}/);
-        console.log(reg);
-        // let result = /\d+\.?\d+/.exec(str);
-        console.log(reg.exec(str));
+        // const reg = new RegExp(/\d+\.?\d{0,2}/);
+
+        // console.log(reg.exec(str));
+
+        let str = '【拍十件】田园百珍丹麦工艺曲奇饼干旗舰店';
+        let reg = new RegExp(/【\S+】/);
+        console.log(str.replace(reg,''));
     </script>
 </body>
 </html>

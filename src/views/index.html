@@ -19,12 +19,19 @@
         <div id='header'>
             <div class='container'>
                 <div class='header-left'>
-                    <a href="">优品购</a>
+                    <a href="../views/index.html" class='logo'>优品购</a>
+                    <div class='login-btns'>
+                        <a href="../views/login.html" class='login-btn'>你好,请登录</a>
+                        <a href="../views/login.html" class='register-btn'>免费注册</a>
+                    </div>
                 </div>
                 <div class='header-center'>
                     <div class='header-search'>
-                        <input type="text" placeholder="好宝贝 等你搜">
+                        <input type="text" placeholder="好宝贝 等你搜" class="search-inp">
                         <button>搜索</button>
+                        <ul class='search-ul'>
+                            <!-- <li><a href="">蒙牛特仑苏低脂牛奶早餐250ml*24盒</a></li> -->
+                        </ul>
                     </div>
                     <div class='hot-search'>
                         <a href="">口罩</a>
@@ -72,11 +79,14 @@
                         <li><a href="">户外运动</a></li>
                         <li><a href="">鞋包</a></li>
                     </ul>
-                    <div class='hide-sreach'>
+                    <div class='hide-search'>
                         <input type="text" class='float-search'>
-                        <button class='hide-btn'><img
-                                src="https://cmsstatic.ffquan.cn/images/srcicos.png?v=123123?v=2021323305356"
-                                alt=""></button>
+                        <button class='hide-btn'>
+                            <img src="https://cmsstatic.ffquan.cn/images/srcicos.png?v=123123?v=2021323305356" alt="">
+                        </button>
+                        <ul class='float-ul'>
+                            <!-- <li><a href="">蒙牛特仑苏低脂牛奶早餐250ml*24盒</a></li> -->
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -237,10 +247,11 @@
                                 </div>
                                 <div>
                                     <span class='left-top-btn'>换一换</span>
-                                    <span>查看更多</span>
+                                    <span class='left-see-more'>查看更多</span>
                                 </div>
                             </div>
                             <div class='left-top-goods'>
+                                <!-- ad-goods渲染开始 -->
                                 <!-- <a href="" class='left-top-item'>
                                     <div class='top-item-left'>
                                         <img src="https://img.alicdn.com/imgextra/i3/2768335812/O1CN010KNxNz1snwc1G8AAz_!!2768335812.jpg_310x310.jpg"
@@ -272,31 +283,32 @@
                                 </div>
                             </div>
                             <div class='ad-left-downTop'>
-                                <div class='downTop-item'>
+                                <a href="../views/details.html?id=297" class='downTop-item' goods_id="297">
                                     <img src="https://cmsstatic.ffquan.cn//images/home/top_1.png?v=202104231430" alt=""
                                         class='downTop-item-imgLeft'>
-                                    <img src="https://img.alicdn.com/imgextra/i1/791877623/O1CN019l8El426BNsnyU65v_!!791877623.jpg_310x310.jpg"
+                                    <img src="https://img.alicdn.com/imgextra/i2/827058968/O1CN01V8wEZR2G7OaYyTggj_!!827058968.png_310x310.jpg"
                                         alt="" class='downTop-item-imgRight'>
                                     <div class='downTop-item-content'>
-                                        <p>速抢! 20个医用成人口罩</p>
-                                        <span>近两小时疯抢<b>4.6万</b>件</span>
-                                        <div><span>￥1.1</span><span>2元券</span></div>
+                                        <p>【大希地】培根番茄肉酱意大利面230g</p>
+                                        <span>近两小时疯抢<b>4万</b>件</span>
+                                        <div><span>￥19</span><span>10元券</span></div>
                                     </div>
-                                </div>
-                                <div class='downTop-item'>
+                                </a>
+                                <a href="../views/details.html?id=298" class='downTop-item' goods_id="298">
                                     <img src="https://cmsstatic.ffquan.cn//images/home/top_2.png?v=202104231430" alt=""
                                         class='downTop-item-imgLeft'>
-                                    <img src="http://img.alicdn.com/imgextra/i3/190903296/O1CN01HKzXKh1aDc5kxYpkq_!!190903296.jpg_310x310.jpg"
+                                    <img src="https://img.alicdn.com/imgextra/i2/752144829/O1CN01wAxFz71lXjFnbmGQQ_!!752144829.jpg_310x310.jpg"
                                         alt="" class='downTop-item-imgRight'>
                                     <div class='downTop-item-content'>
-                                        <p>【五芳斋】粽子礼袋400g共4只</p>
-                                        <span>近两小时疯抢<b>2万</b>件</span>
-                                        <div><span>￥9.9</span><span>10元券</span></div>
+                                        <p>【亦淘】每日坚果组合15g*7袋</p>
+                                        <span>近两小时疯抢<b>3.5万</b>件</span>
+                                        <div><span>￥5.9</span><span>60元券</span></div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class='ad-left-downUp'>
-                                <div class='downUp-item'>
+                                <!-- ad-list渲染开始 -->
+                                <!-- <a href="" class='downUp-item'>
                                     <div class='downUp-item-img'>
                                         <img src="https://img.alicdn.com/imgextra/i2/1994001610/O1CN01aDhgCn1NlQFC3AVW8_!!1994001610.jpg_310x310.jpg"
                                             alt="">
@@ -310,71 +322,7 @@
                                         </div>
                                     </div>
                                     <span class='downUp-item-icon'><i>3</i></span>
-                                </div>
-
-                                <div class='downUp-item'>
-                                    <div class='downUp-item-img'>
-                                        <img src="https://img.alicdn.com/imgextra/i1/702948307/O1CN01ZtoBHV2BEenQRA5Sq_!!702948307.jpg_310x310.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class='ad-item-content'>
-                                        <p>蓝牙音箱迷你携式低音炮</p>
-                                        <span>近两小时疯抢<b>1.2万</b>件</span>
-                                        <div class='item-content-price'>
-                                            <span>￥9.9</span>
-                                            <span>20元券</span>
-                                        </div>
-                                    </div>
-                                    <span class='downUp-item-icon'><i>4</i></span>
-                                </div>
-
-                                <div class='downUp-item'>
-                                    <div class='downUp-item-img'>
-                                        <img src="https://img.alicdn.com/imgextra/i1/1603372607/O1CN01EGJPRS1V83A2z90RD_!!1603372607.jpg_310x310.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class='ad-item-content'>
-                                        <p>【瑜然美】祛痘淡印芦荟胶300g</p>
-                                        <span>近两小时疯抢<b>9891</b>件</span>
-                                        <div class='item-content-price'>
-                                            <span>￥5.1</span>
-                                            <span>30元券</span>
-                                        </div>
-                                    </div>
-                                    <span class='downUp-item-icon'><i>5</i></span>
-                                </div>
-
-                                <div class='downUp-item'>
-                                    <div class='downUp-item-img'>
-                                        <img src="https://img.alicdn.com/imgextra/i2/2815885210/O1CN01R46YLW1oMEB1Wta63_!!2815885210.jpg_310x310.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class='ad-item-content'>
-                                        <p>可抵签到~【懒人必备】干湿两用免手洗拖把</p>
-                                        <span>近两小时疯抢<b>8573</b>件</span>
-                                        <div class='item-content-price'>
-                                            <span>￥8.3</span>
-                                            <span>10元券</span>
-                                        </div>
-                                    </div>
-                                    <span class='downUp-item-icon'><i>6</i></span>
-                                </div>
-
-                                <div class='downUp-item'>
-                                    <div class='downUp-item-img'>
-                                        <img src="https://img.alicdn.com/imgextra/i1/1023477313/O1CN01K8QcL123tP3pXaTJa_!!1023477313.jpg_310x310.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class='ad-item-content'>
-                                        <p>南京同仁堂植萃眼贴20贴</p>
-                                        <span>近两小时疯抢<b>8430</b>件</span>
-                                        <div class='item-content-price'>
-                                            <span>￥9.9</span>
-                                            <span>30元券</span>
-                                        </div>
-                                    </div>
-                                    <span class='downUp-item-icon'><i>7</i></span>
-                                </div>
+                                </a> -->
                             </div>
                         </div>
                     </div>

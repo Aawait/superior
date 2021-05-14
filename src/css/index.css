@@ -27,14 +27,30 @@
   margin: 4px 10px 0 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
-#app #header .container .header-left a {
+#app #header .container .header-left .logo {
   font-size: 36px;
   color: #FE2E54;
   margin-bottom: 0;
+}
+
+#app #header .container .header-left .login-btns {
+  align-self: flex-end;
+  margin-bottom: 14px;
+  margin-right: 5px;
+}
+
+#app #header .container .header-left .login-btns .login-btn, #app #header .container .header-left .login-btns .register-btn {
+  font-size: 12px;
+  margin-left: 15px;
+  color: #929292;
+}
+
+#app #header .container .header-left .login-btns .login-btn:hover, #app #header .container .header-left .login-btns .register-btn:hover {
+  color: #ff0000;
 }
 
 #app #header .container .header-center {
@@ -52,6 +68,7 @@
   border-radius: 3px;
   height: 40px;
   margin-bottom: 5px;
+  position: relative;
 }
 
 #app #header .container .header-center .header-search input {
@@ -75,6 +92,39 @@
 
 #app #header .container .header-center .header-search button:hover {
   background-color: #E41E43;
+}
+
+#app #header .container .header-center .header-search .search-ul {
+  position: absolute;
+  list-style: none;
+  width: 478px;
+  left: -2px;
+  top: 38px;
+  z-index: 10;
+  background-color: #fff;
+  padding: 0;
+  border: 2px solid #FE2E54;
+  border-top: none;
+  display: none;
+}
+
+#app #header .container .header-center .header-search .search-ul li {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#app #header .container .header-center .header-search .search-ul li a {
+  font-size: 13px;
+  display: inline-block;
+  padding: 6px 15px;
+  width: 100%;
+  height: 100%;
+  color: #666;
+}
+
+#app #header .container .header-center .header-search .search-ul li:hover {
+  background-color: #f1f1f1;
 }
 
 #app #header .container .header-center .hot-search a {
@@ -102,6 +152,7 @@
 
 #app #nav {
   background-color: #FE2E54;
+  position: relative;
 }
 
 #app #nav .container {
@@ -141,10 +192,9 @@
   top: 0;
   box-shadow: 0 2px 4px rgba(170, 170, 170, 0.2);
   background-color: #fff;
-  z-index: 999;
+  z-index: 11;
   transition: opacity .3s linear;
   opacity: 0;
-  overflow: hidden;
 }
 
 #app #nav #hide-nav .hide-nav {
@@ -187,7 +237,7 @@
   color: #ff435e;
 }
 
-#app #nav #hide-nav .hide-nav .hide-sreach {
+#app #nav #hide-nav .hide-nav .hide-search {
   width: 340px;
   height: 30px;
   padding-left: 20px;
@@ -197,18 +247,20 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
   margin-right: 1px;
+  position: relative;
+  z-index: 13;
 }
 
-#app #nav #hide-nav .hide-nav .hide-sreach .float-search {
+#app #nav #hide-nav .hide-nav .hide-search .float-search {
   flex: 1;
   height: 100%;
   border: none;
   outline: none;
+  font-size: 13px;
 }
 
-#app #nav #hide-nav .hide-nav .hide-sreach .hide-btn {
+#app #nav #hide-nav .hide-nav .hide-search .hide-btn {
   width: 50px;
   height: 100%;
   display: flex;
@@ -217,11 +269,39 @@
   align-items: center;
   background-color: #fe2e54;
   border: none;
+  border-radius: 0 20px 20px 0;
 }
 
-#app #nav #hide-nav .hide-nav .hide-sreach .hide-btn img {
+#app #nav #hide-nav .hide-nav .hide-search .hide-btn img {
   width: 20px;
   height: 20px;
+}
+
+#app #nav #hide-nav .hide-nav .float-ul {
+  width: 278px;
+  position: absolute;
+  top: 26px;
+  left: 8px;
+  list-style: none;
+  z-index: 12;
+  border: 2px solid #fe2e54;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+#app #nav #hide-nav .hide-nav .float-ul li a {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+#app #nav #hide-nav .hide-nav .float-ul li a:hover {
+  background-color: #f1f1f1;
 }
 
 #app #main {
@@ -687,11 +767,11 @@
   border-top: 1px solid #eee;
 }
 
-#app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > div:nth-child(odd) {
+#app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > a:nth-child(odd) {
   background-color: #f6e5e2;
 }
 
-#app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > div:nth-child(even) {
+#app #main .container .ad .ad-left .ad-left-down .ad-left-downTop > a:nth-child(even) {
   background-color: #faedff;
 }
 
@@ -700,7 +780,7 @@
   height: 100%;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   user-select: none;
   display: flex;
@@ -750,6 +830,7 @@
   font-size: 16px;
   color: #616161;
   font-weight: 500;
+  margin: 0 5px;
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item > div div {
@@ -762,7 +843,7 @@
 }
 
 #app #main .container .ad .ad-left .ad-left-down .ad-left-downTop .downTop-item > div div :nth-child(1) {
-  font-size: 15px;
+  font-size: 20px;
   color: #f66046;
 }
 

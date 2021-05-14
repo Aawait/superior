@@ -5,8 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登陆注册</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../icon/fonts/iconfont.css">
+    <script src="../lib/MyPromise.js"></script>
 </head>
 <body>
-    
+    <div id="box">
+        <header>
+            <a href="">
+                <img src="../icon/logo.png" alt="">
+            </a>
+        </header>
+        <main>
+           <div id="login">
+                <div class='login-title'>
+                    <span class='pass-login'>密码登录</span>
+                    <span>短信登录</span>
+                </div>
+                <div class='login-content'>
+                   <div class='login-inp'>
+                         <label for="" class='iconfont icon-dengluyonghu'></label>
+                         <input type="text" name="" id="username" placeholder="会员名/邮箱/手机号">
+                        </div>
+                        <p class='userTest'>请输入正确格式，用户名为4-10位</p>
+                   <div class='login-inp'>
+                         <label for="" class='iconfont icon-lock'></label>
+                         <input type="password" name="" id="password" placeholder="请输入登录密码">
+                        </div>
+                        <p class='passTest'>请输入正确的格式，密码最少6位并必须包含一位字母</p>
+                   <div class='login-btn'>
+                        <button class="btn">登录</button>
+                   </div>
+                   <div class='forget-pass'>
+                       <span class='register'>注册</span>
+                       <span>忘记密码</span>
+                       <span>忘记用户名</span>
+                   </div>
+                </div>
+           </div>
+        </main>
+    </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>

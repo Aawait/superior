@@ -287,6 +287,8 @@ class FloatNav {
     init() {
         this.hedaerTop = document.querySelector('#header').offsetHeight;
         this.navTop = document.querySelector('#nav').offsetHeight;
+        this.search = document.querySelector('.float-search');
+        this.floatUl = document.querySelector('.float-ul');
 
         // addEventListener 事件监听绑定 解决多个window.onscroll 冲突覆盖问题
         window.addEventListener("scroll", e => {
@@ -296,6 +298,8 @@ class FloatNav {
             } else {
                 this.ele.style.height = 0;
                 this.ele.style.opacity = 0;
+                this.search.value = '';
+                this.floatUl.style.display = 'none';
             }
         });
 

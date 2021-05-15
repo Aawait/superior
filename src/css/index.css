@@ -193,7 +193,7 @@
   box-shadow: 0 2px 4px rgba(170, 170, 170, 0.2);
   background-color: #fff;
   z-index: 11;
-  transition: opacity .3s linear;
+  transition: opacity .2s linear;
   opacity: 0;
 }
 
@@ -215,6 +215,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #app #nav #hide-nav .hide-nav .hide-list li {
@@ -231,9 +232,15 @@
   line-height: 50px;
   color: #666666;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
 }
 
 #app #nav #hide-nav .hide-nav .hide-list li a:hover {
+  color: #ff435e;
+}
+
+#app #nav #hide-nav .hide-nav .hide-list li .active {
+  border-color: #fe2e54;
   color: #ff435e;
 }
 

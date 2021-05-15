@@ -69,8 +69,9 @@ class Details {
                  <span>￥${reg.exec(obj.old_price)[0]}</span>
              </p>
              <p class='goods-btn'>
-                 <button>领券购买</button>
-                 <button><img src="https://cmsstatic.ffquan.cn//images/home/share.png?v=202104231430"
+                 <a href="#" class='join-cart'>加入购物车</a>
+                 <a href="../views/cart.html" class='view-cart'>查看购物车</a>
+                 <button class='share'><img src="https://cmsstatic.ffquan.cn//images/home/share.png?v=202104231430"
                          alt=""> 分享</button>
              </p>
          </div>
@@ -121,3 +122,33 @@ class Details {
 }
 
 new Details('../api/listData1.php');
+
+
+// 回到顶部按钮功能
+class BackTop {
+    constructor(btn) {
+        this.btn = document.querySelector(btn);
+        this.init();
+    }
+    init() {
+
+        this.scrollTop = 1500;
+
+        // addEventListener 事件监听绑定 解决多个window.onscroll 冲突覆盖问题
+        window.addEventListener("scroll", e => {
+
+            if (window.scrollY >= this.scrollTop) {
+                this.btn.style.height = '50px';
+            } else {
+                this.btn.style.height = 0;
+            }
+        });
+
+        this.btn.onclick = () => {
+            window.scrollTo(0, 0);
+        }
+    }
+
+}
+
+new BackTop('.back-top');

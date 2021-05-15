@@ -119,7 +119,7 @@ class Cart{
                 this.content.innerHTML = `<div class="container">  
                 <h1>Hello, ${this.username}</h1>
                 <p style='text-align:center;font-size:20px;font-weight:600;color:#5BC0DE;'>购物车还没有商品,快去逛逛吧</p>
-                <p style='text-align:center'><a class="btn btn-primary btn-default" href="../views/index.html" role="button">Go index！</a></p>
+                <p style='text-align:center'><a class="btn btn-primary btn-default" href="../index.html" role="button">Go index！</a></p>
                  </div>`;
 
                  localStorage.setItem('cartData','');
@@ -244,11 +244,13 @@ class Cart{
 
     total(){
         let totalNum = this.box.querySelector('.total');
+
+        if(!localStorage.getItem('carData'))  return;
+
         let data = JSON.parse(localStorage.getItem('cartData'));
         let sum =  data.reduce((pre,item)=>{
             return pre += item.goods_num * item.now_price;
         },0);
-
 
         totalNum.innerText = sum;
     }

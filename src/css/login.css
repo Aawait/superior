@@ -22,7 +22,7 @@
 #box main {
   width: 100%;
   height: 600px;
-  background-image: url(https://gtms01.alicdn.com/tps/i1/TB1GTCYLXXXXXcHXpXXcoeQ2VXX-2500-600.jpg);
+  background-image: url(../icon/bgimg.jpg);
   background-position: 50% 0;
   position: relative;
 }

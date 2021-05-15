@@ -48,7 +48,7 @@ class Search{
         data.forEach(item=>{
             str += `
             <li>
-            <a href="../views/details.html?id=${item.id}" goods_id="${item.id}">${item.title}</a>
+            <a href="./views/details.html?id=${item.id}" goods_id="${item.id}">${item.title}</a>
             </li>
             `
         });
@@ -60,10 +60,10 @@ class Search{
 }
 
 // 主搜索框
-new Search('.search-ul','../api/search.php','.search-inp');
+new Search('.search-ul','./api/search.php','.search-inp');
 
 // 悬浮的小搜索框
-new Search('.float-ul','../api/search.php','.float-search');
+new Search('.float-ul','./api/search.php','.float-search');
 
 // swiper轮播图
 class MySwiper {
@@ -183,7 +183,7 @@ class WheelGoods {
         // 拿到过滤出来的三条数据渲染页面
         newData.forEach(item => {
             this.box.innerHTML += `
-              <a href="../views/details.html?id=${item.id}" goods_id=${item.id}>
+              <a href="./views/details.html?id=${item.id}" goods_id=${item.id}>
               <i>买一送一</i>
               <span>${item.title}</span>
               </a>
@@ -193,7 +193,7 @@ class WheelGoods {
     }
 }
 
-new WheelGoods('.wheel-list', '../api/listData1.php');
+new WheelGoods('.wheel-list', './api/listData1.php');
 
 
 // 渲染列表数据
@@ -248,7 +248,7 @@ class GoodsList {
         const reg = new RegExp(/\d+\.?\d{0,2}/);
         data.forEach(item => {
 
-            str += `<a href="../views/details.html?id=${item.id}" class='list-item' goods_id="${item.id}" target="_blank">
+            str += `<a href="./views/details.html?id=${item.id}" class='list-item' goods_id="${item.id}" target="_blank">
              <div class='item-top'><img
                      src="${item.img}"
                      alt=""></div>
@@ -275,7 +275,7 @@ class GoodsList {
 
 }
 
-new GoodsList('.list-content', '../api/listData1.php');
+new GoodsList('.list-content', './api/listData1.php');
 
 
 // 悬浮搜索框功能
@@ -385,7 +385,7 @@ class Adgoods {
         const reg = new RegExp(/\d+\.?\d{0,2}/);
         newData.forEach(item => {
             str += `
-           <a href="../views/details.html?id=${item.id}" class='left-top-item' goods_id="${item.id}">
+           <a href="./views/details.html?id=${item.id}" class='left-top-item' goods_id="${item.id}">
                 <div class='top-item-left'>
                     <img src="${item.img}"
                         alt="">
@@ -411,7 +411,7 @@ class Adgoods {
 
 }
 
-new Adgoods('.left-top-goods', '../api/listData1.php');
+new Adgoods('.left-top-goods', './api/listData1.php');
 
 
 // ad商品区倒计时功能
@@ -458,8 +458,10 @@ class AdList{
     constructor(name,url){
          this.box = document.querySelector(name);
          this.url = url;
+         this.id = 1.1;
+         this.length = 1000;
          this.index = 200; // 定义一个索引，用于获取数据，从第200条数据开始
-         this.getData();
+         this.getData(this.url,this.id,this.length);
          this.init();
     }
 
@@ -470,29 +472,47 @@ class AdList{
         // 24点自动更换商品
        if(time == 0){
            this.index += 5;
-           this.getData();
+           this.render();
        }
     }
-     getData(){
-        // 直接获取本地数据渲染
-        let list =JSON.parse(localStorage.getItem('list')) ;
 
+     async getData(url,id,length){
+
+        let res = await new MyPromise({
+            url,
+            type : "POST",
+            data : {
+                page:id,
+                length
+            }
+        });
+
+        localStorage.setItem('list',res);
+        this.render();
+    }
+    
+    render(){
+        
+        let list = JSON.parse(localStorage.getItem('list'));
+        // 直接获取本地数据渲染
+        
         if(!list) return;
         
         if(this.index >= list.data.length){
             this.index = 200;
         }
+        
         let newData = list.data.filter((item,index)=>{
             return index >= this.index && index < this.index +5;
         });
-
+         
         let str = '';
         const reg = new RegExp(/\d+\.?\d{0,2}/);
         let i = 2;
         newData.forEach(item=>{
            i++;
             str += `
-            <a href="../views/details.html?id=${item.id}" class='downUp-item' goods_id="${item.id}">
+            <a href="./views/details.html?id=${item.id}" class='downUp-item' goods_id="${item.id}">
                  <div class='downUp-item-img'>
                      <img src="${item.img}"
                          alt="">
@@ -515,7 +535,7 @@ class AdList{
     }
 }
 
-new AdList('.ad-left-downUp','../api/listData1.php');
+new AdList('.ad-left-downUp','./api/listData1.php');
 
 // 回到顶部按钮功能
 class BackTop {

@@ -48,8 +48,9 @@
                    return;
                } 
                window.alert("登录成功!即将跳转首页");
-               document.cookie = `user=${res.Hello}`;
-               location.href = `../views/index.html?user=${res.Hello}`;
+               let expires = 0.5*60*60;
+               document.cookie = `user=${res.Hello};path=/`;
+               location.href = `../index.html?user=${res.Hello}`;
            })
 
         }
@@ -88,7 +89,7 @@
 
                 window.alert(res.state);
                 document.cookie = `user=${res.Hello}`;
-                location.href = `../views/index.html?user=${res.Hello}`;
+                location.href = `../index.html?user=${res.Hello}`;
             })
 
         }

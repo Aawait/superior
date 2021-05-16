@@ -161,6 +161,7 @@ class WheelGoods {
         });
          // 获取数据存入本地，这样定时器直接从本地拿数据，不会发送多次请求渲染了,优化了性能
           localStorage.setItem('list',res);
+          this.render();
     }
 
     render() {
@@ -322,7 +323,6 @@ class Adgoods {
         this.index = 0;
         this.getData(this.url, this.id, this.length);
         this.init();
-        this.render();
     }
 
     init() {
@@ -363,6 +363,7 @@ class Adgoods {
         // 获取后端返回的数据，存入本地
         // 这样就不用发起多次请求，一次请求就够了
         localStorage.setItem('list', res);
+        this.render();
     }
 
     render() {

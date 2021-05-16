@@ -1,19 +1,69 @@
 // 详情页
 
 class Details {
-    constructor(url) {
+    constructor(url,addUrl) {
         this.url = url;
+        this.addUrl = addUrl;
         // 获取地址栏传过来的id,用这个id发送后端请求对应id的数据
         this.id = location.search.substr(4) * 1;
         this.length = 1; // 请求一条
         this.init();
         this.getData(this.url, this.id, this.length);
-
+        
     }
-
+    
     init() {
+        this.username = this.getCookie('user');
         this.box = document.querySelector('.details-top');
         this.shop = document.querySelector('.details-msg');
+
+        this.box.onclick = e =>{
+            e = e || window.event;
+            if(e.target.classList.contains('join-cart')){
+                // 点击加入购物车判断是否登录,没有登录跳转登录页
+                e.preventDefault();
+                if(!this.username){
+                    localStorage.setItem('url',location.href);
+                    window.alert("请先登录才能添加购物车");
+                    location.href = "../views/login.html";
+                    return;
+                }
+                this.addData(this.id,this.username);
+                
+            }
+
+            if(e.target.classList.contains('view-cart')){
+                e.preventDefault();
+                if(!this.username){
+                    localStorage.setItem('url',location.href);
+                    window.alert("请先登录才能查看购物车");
+                    location.href = "../views/login.html";
+                    return;
+                }
+
+                location.href = "../views/cart.html";
+            }
+        }
+    }
+
+    getCookie(key){
+        let str = document.cookie;
+        let arr = str.split('; ');
+        let obj = {};
+        arr.forEach(item=>{
+           let newArr =  item.split('=');
+           obj[newArr[0]] = newArr[1];
+        })
+
+       if(!key){
+           return obj;
+       }
+       
+       for(let item in obj){
+           if(key == item){
+               return obj[item];
+           }
+       }
     }
 
     async getData(url, page, length) {
@@ -28,6 +78,24 @@ class Details {
 
         res = JSON.parse(res);
         this.render(res.data[0]);
+    }
+
+    async addData(goods_id,username){
+       let res = await new MyPromise({
+           url : this.addUrl,
+           type : "POST",
+           data : {
+               goods_id,
+               username,
+           }
+       });
+        
+       res = JSON.parse(res);
+       if(res.code){
+           window.alert("添加购物车成功!");
+       }else{
+           window.alert("哦噢添加失败了,看看你有没有登录!");
+       }
     }
 
     render(obj) {
@@ -70,7 +138,7 @@ class Details {
              </p>
              <p class='goods-btn'>
                  <a href="#" class='join-cart'>加入购物车</a>
-                 <a href="../views/cart.html" class='view-cart'>查看购物车</a>
+                 <a href="#" class='view-cart'>查看购物车</a>
                  <button class='share'><img src="https://cmsstatic.ffquan.cn//images/home/share.png?v=202104231430"
                          alt=""> 分享</button>
              </p>
@@ -121,7 +189,7 @@ class Details {
 
 }
 
-new Details('../api/listData1.php');
+new Details('../api/listData1.php','../api/addCar.php');
 
 
 // 回到顶部按钮功能

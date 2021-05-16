@@ -1,11 +1,11 @@
 <?php
-    $id = $_GET['goods_id'];
-    $num = $_GET['goods_num'];
-    $username = $_GET['username'];
+    $id = $_POST['goods_id'];
+    $num = $_POST['goods_num'];
+    $username = $_POST['username'];
 
-    $con = mysqli_connect('localhost','root','123456','goodsList');
+    $con = mysqli_connect('localhost','root','123456','superior');
 
-    $sql = "UPDATE `car` SET `goods_num` = '$num' WHERE `userName`= '$username' AND `goods_id` = '$id'";
+    $sql = "UPDATE `cart` SET `goods_num` = '$num' WHERE `userName`= '$username' AND `goods_id` = '$id'";
 
     $res = mysqli_query($con,$sql);
 

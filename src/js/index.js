@@ -224,7 +224,7 @@ class GoodsList {
             },
             change: index => {
                 this.getData(this.url, index, this.length);
-                window.scrollTo(0, 0);
+                // window.scrollTo(0, 0);
             }
         })
     }
@@ -590,3 +590,32 @@ class LoginBtn{
 }
 
 new LoginBtn('.login-btn');
+
+
+// 分页点击功能
+class Page{
+    constructor(name){
+        this.box = document.querySelector(name);
+        this.init(this.box);
+
+    }
+    init(box){
+       box.onclick = e =>{
+           e = e || window.event;
+           if(e.target.classList.contains('first') || e.target.classList.contains('prev')){
+               window.scrollTo(0,1400);
+           }
+
+           if(e.target.classList.contains('next') || e.target.classList.contains('last')){
+               window.scrollTo(0,1400);
+           }
+
+           if(e.target.nodeName == "P" || e.target.nodeName == "BUTTON"){
+               window.scrollTo(0,1400);
+           }
+
+       }
+    }
+}
+
+new Page('#page');

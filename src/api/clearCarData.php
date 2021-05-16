@@ -2,9 +2,9 @@
     // 获取传递过来的用名 和 商品id
     $username = $_GET['username'];
 
-    $con = mysqli_connect('localhost','root','123456','goodsList');
+    $con = mysqli_connect('localhost','root','123456','superior');
 
-    $sql = "DELETE FROM `car` WHERE  `username` = '$username'";
+    $sql = "DELETE FROM `cart` WHERE  `username` = '$username'";
 
     $res = mysqli_query($con,$sql);
 

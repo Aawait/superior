@@ -460,6 +460,8 @@
 
                         .wheel-list {
                             width: 300px;
+                            height: 105px;
+                            overflow: hidden; 
                                 a {
                                     width: 100%;
                                     @include flex();

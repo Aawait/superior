@@ -483,6 +483,8 @@
 
 #app #main .container .banner .banner-right .banner-right-list .wheel-list {
   width: 300px;
+  height: 105px;
+  overflow: hidden;
 }
 
 #app #main .container .banner .banner-right .banner-right-list .wheel-list a {

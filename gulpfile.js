@@ -38,7 +38,7 @@ module.exports.buildJs = buildJs;
 
 function buildCss(done){
     gulp.src('./src/css/*.css')
-    .pipe(minCss({}))
+    .pipe(minCss())
     .pipe(rename({suffix:'.min'}))
     .pipe(gulp.dest('./dist/css'))
     done();
@@ -92,3 +92,14 @@ function indexJs(done){
 }
 
 module.exports.indexJs = indexJs;
+
+
+function indexCss(done){
+    gulp.src('./src/css/index.css')
+    .pipe(minCss())
+    .pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest('./dist'))
+}
+
+module.exports.indexCss = indexCss;
+
